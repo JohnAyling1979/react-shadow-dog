@@ -12,27 +12,6 @@ const styles = {
     height: '100vh',
   },
 
-  selector: {
-    fontSize: '1rem',
-    padding: '0.5rem',
-    border: '1px solid #ccc',
-    borderRadius: '0.5rem',
-    textAlign: 'center',
-    width: '15rem',
-  },
-
-  options: {
-    backgroundColor: '#f9f9f9',
-    color: '#333',
-    fontWeight: 'normal',
-  },
-
-  selectedOption: {
-    backgroundColor: '#e0e0e0',
-    color: '#000',
-    fontWeight: 'bold',
-  },
-
   canvas: {
     width: CANVAS_WIDTH,
     height: CANVAS_HEIGHT,
