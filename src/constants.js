@@ -1,5 +1,5 @@
-export const CANVAS_WIDTH = 600;
-export const CANVAS_HEIGHT = 600;
+export const CANVAS_WIDTH = 800;
+export const CANVAS_HEIGHT = 700;
 export const SPRITE_WIDTH = 575;
 export const SPRITE_HEIGHT = 523;
 

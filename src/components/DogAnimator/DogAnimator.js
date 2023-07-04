@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { CANVAS_WIDTH, CANVAS_HEIGHT, SPRITE_WIDTH, SPRITE_HEIGHT, ANIMATION_MAP } from './constants';
-import dogImage from './images/ShadowDog';
+import { CANVAS_WIDTH, CANVAS_HEIGHT, SPRITE_WIDTH, SPRITE_HEIGHT, ANIMATION_MAP } from '../../constants';
+import dogImage from '../../images/ShadowDog';
+import Select from '../Select/Select';
 
-function Animator({ ctx }) {
+function DogAnimator({ ctx }) {
   const [frame, setFrame] = useState(0);
   const [animation, setAnimation] = useState(0);
   const [timeStamp, setTimeStamp] = useState(0);
@@ -38,19 +39,20 @@ function Animator({ ctx }) {
     }
   }, [ctx, frame, animation, timeStamp]);
 
-  const changeAnimation = (e) => {
-    setAnimation(e.target.value);
+  const changeAnimation = (value) => {
+    setAnimation(value);
     setFrame(0);
     setTimeStamp(0);
   }
 
+  const animationOptions = Object.keys(ANIMATION_MAP).map((key) => ({
+    value: key,
+    label: ANIMATION_MAP[key].name,
+  }));
+
   return (
-    <div className='select-container'>
-      <select className='selector' onChange={changeAnimation}>
-        {Object.keys(ANIMATION_MAP).map((key) => <option key={key} value={key}>{ANIMATION_MAP[key].name}</option>)}
-      </select>
-    </div>
+    <Select options={animationOptions} onChange={changeAnimation} />
   );
 }
 
-export default Animator;
+export default DogAnimator;
