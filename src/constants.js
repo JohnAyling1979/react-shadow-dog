@@ -2,6 +2,7 @@ export const CANVAS_WIDTH = 800;
 export const CANVAS_HEIGHT = 700;
 export const SPRITE_WIDTH = 575;
 export const SPRITE_HEIGHT = 523;
+export const BACKGROUND_WIDTH = 2400;
 
 export const ANIMATION_MAP = {
   0: {

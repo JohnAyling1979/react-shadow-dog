@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from '../../constants';
 import DogAnimator from '../DogAnimator/DogAnimator';
 import Select from '../Select/Select';
+import ParallaxAnimator from '../ParallaxAnimator/ParallaxAnimator';
 
 const styles = {
   app: {
@@ -39,8 +40,8 @@ function App() {
 
   return (
     <div style={styles.app}>
-      <h1>JavaScript Game Development Masterclass 2022</h1>
       {demo === 'dog' && <DogAnimator ctx={ctx} />}
+      {demo === 'paralax' && <ParallaxAnimator ctx={ctx} />}
       <canvas style={styles.canvas} id="canvas1"></canvas>
       <Select options={demoOptions} onChange={setDemo} />
     </div>
