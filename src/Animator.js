@@ -10,7 +10,10 @@ function Animator({ ctx }) {
   useEffect(() => {
     const animate = () => {
       ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-      ctx.drawImage(dogImage, SPRITE_WIDTH * frame, SPRITE_HEIGHT * animation, SPRITE_WIDTH, SPRITE_HEIGHT, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+      const x = CANVAS_WIDTH / 2 - SPRITE_WIDTH / 4;
+      const y = CANVAS_HEIGHT / 2 - SPRITE_HEIGHT / 4;
+
+      ctx.drawImage(dogImage, SPRITE_WIDTH * frame, SPRITE_HEIGHT * animation, SPRITE_WIDTH, SPRITE_HEIGHT, x, y, SPRITE_WIDTH / 2, SPRITE_HEIGHT / 2);
 
       setFrame((prevFrame) => {
         if (timeStamp % ANIMATION_MAP[animation].stagger === 0) {
