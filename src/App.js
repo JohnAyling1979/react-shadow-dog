@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { CANVAS_WIDTH, CANVAS_HEIGHT } from './constants';
+import Animator from './Animator';
 
 function App() {
+  const [ctx, setCtx] = useState(null);
+
+  useEffect(() => {
+    const canvas = document.getElementById('canvas1');
+
+    canvas.width = CANVAS_WIDTH;
+    canvas.height = CANVAS_HEIGHT;
+
+    setCtx(canvas.getContext('2d'));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Animator ctx={ctx} />
+      <canvas id="canvas1"></canvas>
     </div>
   );
 }
